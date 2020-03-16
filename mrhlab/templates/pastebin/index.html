@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <title>Paste Bin</title>
+    <link href="{{ url_for('static', filename='css/materialize.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link href="{{ url_for('static', filename='css/materialicon.css') }}" rel="stylesheet">
+</head>
+<body>
+<div id="main"></div>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    var csrf_token = "{{ csrf_token() }}";
+    var index_page_url = "{{ url_for('pastebin.index') }}";
+    var intro_page_url = "{{ url_for('pastebin.intro') }}";
+    var generate_page_url = "{{ url_for('pastebin.generate') }}";
+    var default_error_message = "Oops, something was wrong!";
+    var empty_body_error_message = "Your content was empty!";
+</script>
+</body>
+</html>

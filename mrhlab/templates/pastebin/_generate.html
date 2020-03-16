@@ -1,0 +1,14 @@
+{% extends 'pastebin/base.html' %}
+
+{% block content %}
+<div class="center">
+    <h2 class="teal-text text-lighten-2">Paste Bin</h2>
+    <h5 class="light">Generate succeed. Your short-URL is:</h5>
+    <a id="short-url" class="light" href={{ url_for ('pastebin.index', _external=True) + short_URL}}> {{ url_for('pastebin.index', _external=True) + short_URL}}</a>
+
+
+    <div class="row">
+        <a id="copy-btn" class="btn waves-effect waves-light green">Copy Short-URL</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'pastebin/base.html' %}
+
+{% block content %}
+<div class="center">
+    <h2 class="teal-text text-lighten-2">Paste Bin</h2>
+    <h5 class="light">Paste what you want here and we will generate a short-url for you to share it.</h5>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="content-textarea" class="materialize-textarea"></textarea>
+                    <label for="content-textarea">Content here</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <a class="btn waves-effect waves-light green" id="generate-ShortURL-btn">Generate Short-URL</a>
+    </div>
+</div>
+{% endblock %}
