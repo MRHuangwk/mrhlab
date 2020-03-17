@@ -2,18 +2,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %} - MR.H LAB</title>
-    <!-- Bootstrap CSS -->\
-    <script src="{{ url_for('static', filename='/scripts/jquery-3.4.1.slim.min.js') }}"> </script>
-    <script src="{{ url_for('static', filename='/scripts/popper.min.js') }}"> </script> 
-    <script src="{{ url_for('static', filename='/scripts/bootstrap.min.js') }}"> </script>
+    <title>{% block title %}{% endblock %} - {{ admin.lab_title|default('MR.H LAB')}}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"> </script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"> </script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"> </script>
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 </head>
  
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="/">MR.H LAB</a>
+        <a class="navbar-brand" href="/">{{ admin.lab_title|default('MR.H LAB')}}</a>
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -21,9 +22,9 @@
          <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">首页</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">关于</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">联系方式</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('lab.index') }}">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('lab.index') }}">关于</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('lab.index') }}">联系方式</a></li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     {% if g.user %}
@@ -51,7 +52,7 @@
         {% block content %}{% endblock %}
         <hr />
         <footer>
-            <p>&copy; 2020 - MR.H LAB</p>
+            <p>&copy; 2020 - {{ admin.lab_title|default('MR.H LAB')}}</p>
         </footer>
     </div>
 </body>                                                                                                                                                                                                                                                           ~                       

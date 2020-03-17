@@ -1,16 +1,18 @@
 import os
-from flask import Flask, flash, request, redirect, url_for
-from werkzeug.utils import secure_filename
+from flask import Flask
 from mrhlab.apis.v1 import api_v1
+from mrhlab.commands import register_commands
+from mrhlab.models import Admin, Category
 
 from mrhlab.extensions import db, moment, ckeditor, mail, mongo, csrf, cache
+
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        SQLALCHEMY_DATABASE_URI=os.getenv('DATABASE_URL', 'sqlite:///'+os.path.join(app.root_path, 'data.db')),
+        SQLALCHEMY_DATABASE_URI=os.getenv('DATABASE_URL', 'sqlite:///' + os.path.join(app.root_path, 'data.db')),
         SQLALCHEMY_TRACK_MODIFICATIONS='FALSE',
         MONGO_URI="mongodb://localhost:27017/myDatabase",
         CACHE_TYPE="simple"
@@ -29,6 +31,15 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    register_extensions(app)
+    register_blueprints(app)
+    register_commands(app)
+    register_template_context(app)
+
+    return app
+
+
+def register_extensions(app):
     db.init_app(app)
     moment.init_app(app)
     ckeditor.init_app(app)
@@ -38,9 +49,24 @@ def create_app(test_config=None):
     csrf.exempt(api_v1)
     cache.init_app(app)
 
+
+def register_blueprints(app):
+    from mrhlab.blueprints import lab
+    app.register_blueprint(lab.bp, url_prefix='/')
+
     from mrhlab.blueprints import pastebin
     app.register_blueprint(pastebin.bp, url_prefix='/pastebin')
     app.register_blueprint(api_v1, url_prefix='/api/v1')
-    
 
-    return app
+    from mrhlab.blueprints import styletransfer
+    app.register_blueprint(styletransfer.bp, url_prefix='/styletransfer')
+
+    from mrhlab.blueprints import auth
+    app.register_blueprint(auth.bp, url_prefix='/auth')
+
+def register_template_context(app):
+    @app.context_processor
+    def make_template_context():
+        admin = Admin.query.first()
+        categories = Category.query.order_by(Category.name).all()
+        return dict(admin=admin, categories=categories)

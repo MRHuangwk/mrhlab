@@ -1,0 +1,30 @@
+{% if applications %}
+{% for application in applications %}
+<div class="row">
+    <div class="col-md-4">
+        <div classs="photo">
+            <a href="{{ url_for('lab.index')+application.url }}">
+                <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename=application.screenshot_path)}}">
+            </a>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h3 class="text-primary"><a href="{{ url_for('lab.index')+application.url }}">{{ application.name }}</a></h3>
+        <p>
+            {{ application.describe|striptags|truncate }}
+            <small><a href="{{ url_for('lab.index')+application.url }}">Try</a></small>
+        </p>
+        <small>
+            Category: {{ application.category.name }}
+        </small>
+    </div>
+</div>
+{% if not loop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+{% else %}
+<div class="tip">
+    <h5>No application yet.</h5>
+</div>
+{% endif %}

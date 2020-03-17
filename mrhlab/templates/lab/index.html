@@ -1,0 +1,13 @@
+{% extends 'lab/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1 class="display-3">{{ admin.lab_title|default('MR.H LAB') }}</h1>
+        <h4 class="text-muted">&nbsp;{{ admin.lab_sub_title|default('LAB Subtitle') }}</h4>
+    </div>
+
+    {% include 'lab/_applications.html' %}
+
+{% endblock %}
