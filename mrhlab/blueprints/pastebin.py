@@ -29,7 +29,7 @@ def generate_base62(s):
 
 @bp.route('/intro')
 def intro():
-    return render_template('/pastebin/_intro.html')
+    return render_template('pastebin/_intro.html')
 
 @bp.route('/generate', methods=['POST'])
 def generate():
@@ -57,7 +57,7 @@ def generate():
             inserted = True
 
     short_URL = base62val
-    return render_template('/pastebin/_generate.html', short_URL=short_URL)
+    return render_template('pastebin/_generate.html', short_URL=short_URL)
 
 @bp.route('/', methods=('GET', 'POST'))
 def index():

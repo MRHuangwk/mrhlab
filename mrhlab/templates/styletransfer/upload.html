@@ -1,0 +1,58 @@
+{% extends 'styletransfer/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h5> Choose style: </h5>
+    <form role="form" method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <div class="row">
+            <img class="col s5 responsive-img" object-fit="cover" alt="Starry night"
+                 src="{{url_for('static', filename='image/starrynight.jpg') }}">
+            <img class="col s5 responsive-img" object-fit="cover" height="100" alt="The scream"
+                 src="{{url_for('static', filename='image/thescream.jpg') }}">
+        </div>
+        <p>
+            <label>
+                <input type="radio" name="style" value="starrynight" checked/>
+                <span>Starry night</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="style" type="radio" value="thescream"/>
+                <span>The scream</span>
+            </label>
+        </p>
+        {% for message in form.style.errors %}
+        <small class="error">{{ message }}</small><br>
+        {% endfor %}
+        <div class="row">
+            <h5> Choose your photo to repaint </h5>
+            <div class="col s6">
+                <img src="{{ url_for('static', filename='image/SHANGHAI.jpg')}}"
+                     class="responsive-img" alt="Responsive image">Example Photo: Shanghai</img>
+            </div>
+            <div class="col s6">
+                <div class="row">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Browse</span>
+                            <input type="file" name="photo" id="photo" accept=".jpg, .jpeg, .png, .gif"/>
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text"
+                                   placeholder="Upload file (<3MB) "/>
+                        </div>
+                    </div>
+                </div>
+                {% for message in form.photo.errors %}
+                <small class="error">{{ message }}</small><br>
+                {% endfor %}
+                <div class="row">
+                    <button type="submit" class="btn waves-effect waves-light blue">Generate repaint photo</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

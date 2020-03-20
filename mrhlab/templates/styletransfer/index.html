@@ -1,0 +1,11 @@
+{% extends 'styletransfer/base.html' %}
+
+{% block content %}
+<div class="center">
+    <h2 class="teal-text text-lighten-2">Style Transfer</h2>
+    <h5 class="light">Repaint your photo with famous picture.</h5>
+    <img class="responsive-img" src="{{url_for('static', filename='image/styletransfer-example.png') }}">
+    <a href="{{ url_for('styletransfer.upload')}}" class="waves-effect waves-light btn">Try</a>
+</div>
+</div>
+{% endblock %}

@@ -1,9 +1,7 @@
 from faker import Faker
-from flask import url_for
 
-from mrhlab.models import Admin, Category, Application
 from mrhlab.extensions import db
-from mrhlab.blueprints import pastebin, styletransfer
+from mrhlab.models import Admin, Category, Application
 
 fake = Faker()
 
