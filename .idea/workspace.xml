@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9edc1ca-718f-45d0-a7b5-58604be519a4" name="Default Changelist" comment="" />
+    <list default="true" id="a9edc1ca-718f-45d0-a7b5-58604be519a4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,25 +14,38 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Z74omRuRfoyh8Xg1XoWHsII8FW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mrhlab/templates/pastebin" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.postfix.templates" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.virtualenvs/mrhlab-sXHWGT0Y/Scripts" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\playground\mrhlab\mrhlab\templates" />
       <recent name="D:\playground\mrhlab" />
+      <recent name="D:\playground\mrhlab\mrhlab\static\image" />
+      <recent name="D:\playground\mrhlab\mrhlab\styletranfer.py" />
+      <recent name="D:\playground\mrhlab\mrhlab\templates\lab" />
+      <recent name="D:\playground\mrhlab\mrhlab\templates" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\playground\mrhlab\mrhlab\templates\pastebin" />
-      <recent name="D:\playground\mrhlab\mrhlab\static" />
-      <recent name="D:\playground\mrhlab" />
-      <recent name="D:\playground\mrhlab\mrhlab" />
+      <recent name="D:\playground\mrhlab\uploads\style" />
+      <recent name="D:\playground\mrhlab\uploads\content" />
+      <recent name="D:\playground\mrhlab\mrhlab\templates" />
+      <recent name="D:\playground\mrhlab\mrhlab\templates\auth" />
+      <recent name="D:\playground\mrhlab\mrhlab\static\image" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -45,6 +60,59 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="mrhlab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="FLASK_DEBUG" value="1" />
+        <env name="FLASK_APP" value="mrhlab" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\HP\.virtualenvs\mrhlab-sXHWGT0Y\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/.virtualenvs/mrhlab-sXHWGT0Y/Scripts" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/.virtualenvs/mrhlab-sXHWGT0Y/Scripts/" />
+      <option name="PARAMETERS" value="flask run" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="celery_runner" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="mrhlab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="FLASK_DEBUG" value="1" />
+        <env name="FLASK_APP" value="mrhlab" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\HP\.virtualenvs\mrhlab-sXHWGT0Y\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/.virtualenvs/mrhlab-sXHWGT0Y/Scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/celery_runner.py" />
+      <option name="PARAMETERS" value="flask run" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.celery_runner" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -57,5 +125,25 @@
       <updated>1584176975350</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="Pipfile" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
