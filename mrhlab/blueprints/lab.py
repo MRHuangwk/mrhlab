@@ -11,3 +11,11 @@ bp = Blueprint('lab', __name__)
 def index():
     applications = Application.query.order_by(Application.id).all()
     return render_template('lab/index.html', applications=applications)
+
+@bp.route('/about')
+def about():
+    return render_template('lab/about.html')
+
+@bp.route('/contact')
+def contact():
+    return render_template('lab/contact.html')

@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9edc1ca-718f-45d0-a7b5-58604be519a4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/mrhlab/static/fun.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mrhlab/templates/lab/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mrhlab/templates/lab/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrhlab/blueprints/lab.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrhlab/blueprints/lab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrhlab/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mrhlab/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrhlab/templates/pastebin/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mrhlab/templates/pastebin/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrhlab/templates/styletransfer/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mrhlab/templates/styletransfer/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -34,11 +41,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\playground\mrhlab\mrhlab\static" />
       <recent name="D:\playground\mrhlab" />
       <recent name="D:\playground\mrhlab\mrhlab\static\image" />
       <recent name="D:\playground\mrhlab\mrhlab\styletranfer.py" />
       <recent name="D:\playground\mrhlab\mrhlab\templates\lab" />
-      <recent name="D:\playground\mrhlab\mrhlab\templates" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\playground\mrhlab\uploads\style" />

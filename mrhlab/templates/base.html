@@ -1,61 +1,68 @@
 <!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %} - {{ admin.lab_title|default('MR.H LAB')}}</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
-    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='open-iconic/font/css/open-iconic-bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endblock styles %}
 </head>
 
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="/">{{ admin.lab_title|default('MR.H LAB')}}</a>
-    <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('lab.index') }}">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('lab.index') }}">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('lab.index') }}">Contact</a></li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            {% if current_user.is_authenticated %}
-            <li style="color:grey"><span>{{ current_user.username }}</span>
-                <a class="btn btn-link" href="{{ url_for('auth.logout') }}" role="button">Sign out</a>
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">{{ admin.lab_title|default('MR.H LAB')}}</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('lab.index') }}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('lab.about') }}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('lab.contact') }}">Contact</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if current_user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link">Logged in as: {{ current_user.username }}</a></li>
+                <li class="nav-item"><a class="btn btn-primary" href="{{ url_for('auth.logout') }}" role="button">Logout</a></li>
                 {% else %}
-                <div class="btn-group">
-                    <a class="btn btn-primary" href="{{ url_for('auth.register') }}" role="button">Register</a>
-                    <a class="btn btn-secondary" href="{{ url_for('auth.login') }}" role="button">Sign in</a>
-                </div>
+                <li class="nav-item"><a class="btn btn-outline-primary" href="{{ url_for('auth.login') }}" role="button">Login</a></li>&nbsp;&nbsp;
+                <li class="nav-item"><a class="btn btn-primary" href="{{ url_for('auth.register') }}" role="button">Register</a></li>
                 {% endif %}
-        </ul>
+            </ul>
+        </div>
     </div>
 </nav>
 
-<br>
-
-<div class="container">
-    <header>
-        {% block header %}{% endblock %}
-    </header>
-    {% for message in get_flashed_messages(with_categories=True) %}
-    <div class="alert alert-{{ message[0] }}" role="alert">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        {{ message[1] }}
+<main>
+    <div class="container">
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        {% for message in get_flashed_messages(with_categories=True) %}
+        <div class="alert alert-{{ message[0] }}" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message[1] }}
+        </div>
+        {% endfor %}
+        {% block content %}{% endblock %}
+        {% block footer %}
+        <hr/>
+        <footer>
+            <p>&copy; 2020 - {{ admin.lab_title|default('MR.H LAB')}}</p>
+        </footer>
+        {% endblock %}
     </div>
-    {% endfor %}
-    {% block content %}{% endblock %}
-    <hr/>
-    <footer>
-        <p>&copy; 2020 - {{ admin.lab_title|default('MR.H LAB')}}</p>
-    </footer>
-</div>
-</body>                                                                                                                                                                                                                                                           ~                       
+</main>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+</html>
