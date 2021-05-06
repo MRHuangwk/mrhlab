@@ -2,7 +2,7 @@ babel==2.6.0
 click==6.7
 faker==0.8.17
 flask-babel==0.11.2
-flask-cors==3.0.6
+flask-cors==3.0.9
 flask-login==0.4.1
 flask-sqlalchemy==2.3.2
 flask-wtf==0.14.2
